@@ -65,6 +65,23 @@ public enum MoveType {
                 return this;
         }
     }
+    
+    public static MoveType setDirection(String direction) {
+        switch(direction) {
+            case "UP":
+                return DOWN;
+            case "DOWN":
+                return UP;
+            case "LEFT":
+                return RIGHT;
+            case "RIGHT":
+                return LEFT;
+            case "PASS":
+                return PASS;
+            default:
+            	return PASS;
+        }
+    }
 
     @Override
     public String toString() {

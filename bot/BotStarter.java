@@ -36,20 +36,23 @@ public class BotStarter {
 	 * Currently returns a random, but valid move.
      * @return a Move object
      */
-    public Move doMove(BotState state) {
+	public Move doMove(BotState state) {
 		MoveType moveType;
 		MoveType lastMoveType = state.getLastDirection();
 
-		if (lastMoveType == null) { // first move
-			moveType = MoveType.getRandomExcluding(MoveType.PASS);
-		} else {
-			MoveType opposite = lastMoveType.getOpposite();
-			moveType = MoveType.getRandomExcluding(opposite);
-		}
-
-		if (moveType != MoveType.PASS) {
-            state.setLastDirection(moveType);
-        }
+//		if (lastMoveType == null) { // first move
+//			moveType = MoveType.getRandomExcluding(MoveType.PASS);
+//		} else {
+//			MoveType opposite = lastMoveType.getOpposite();
+//			moveType = MoveType.getRandomExcluding(opposite);
+//		}
+//
+//		if (moveType != MoveType.PASS) {
+//            state.setLastDirection(moveType);
+//        }
+		
+		
+		moveType = MoveType.setDirection("PASS");
 
 		return new Move(moveType);
     }
